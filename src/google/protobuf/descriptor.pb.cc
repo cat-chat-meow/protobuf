@@ -3708,7 +3708,7 @@ void ExtensionRangeOptions::CopyFrom(const ExtensionRangeOptions& from) {
 }
 
 bool ExtensionRangeOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -7460,7 +7460,7 @@ void FileOptions::CopyFrom(const FileOptions& from) {
 }
 
 bool FileOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -7885,7 +7885,7 @@ void MessageOptions::CopyFrom(const MessageOptions& from) {
 }
 
 bool MessageOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -8367,7 +8367,7 @@ void FieldOptions::CopyFrom(const FieldOptions& from) {
 }
 
 bool FieldOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -8580,7 +8580,7 @@ void OneofOptions::CopyFrom(const OneofOptions& from) {
 }
 
 bool OneofOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -8895,7 +8895,7 @@ void EnumOptions::CopyFrom(const EnumOptions& from) {
 }
 
 bool EnumOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -9149,7 +9149,7 @@ void EnumValueOptions::CopyFrom(const EnumValueOptions& from) {
 }
 
 bool EnumValueOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -9398,7 +9398,7 @@ void ServiceOptions::CopyFrom(const ServiceOptions& from) {
 }
 
 bool ServiceOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 
@@ -9695,7 +9695,7 @@ void MethodOptions::CopyFrom(const MethodOptions& from) {
 }
 
 bool MethodOptions::IsInitialized() const {
-  if (!_impl_._extensions_.IsInitialized()) {
+  if (!_impl_._extensions_.IsInitialized(internal_default_instance())) {
     return false;
   }
 

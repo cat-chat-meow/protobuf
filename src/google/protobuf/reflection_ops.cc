@@ -247,9 +247,15 @@ bool ReflectionOps::IsInitialized(const Message& message, bool check_fields,
       }
     }
   }
-  if (check_descendants && reflection->HasExtensionSet(message) &&
-      !reflection->GetExtensionSet(message).IsInitialized()) {
-    return false;
+  if (check_descendants && reflection->HasExtensionSet(message)) {
+    // It should be safe to directly look up the generated factory because
+    // `extendee` is only used for generated messages that may be backed by
+    // LazyField. nullptr (for dynamic messages) is safe.
+    const Message* extendee =
+        MessageFactory::generated_factory()->GetPrototype(descriptor);
+    if (!reflection->GetExtensionSet(message).IsInitialized(extendee)) {
+      return false;
+    }
   }
   return true;
 }
